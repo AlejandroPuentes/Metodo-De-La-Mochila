@@ -17,7 +17,7 @@ public class Mochila {
         
         for(int i = 0; i<n+1; i++){
             for(int j = 0; j<2; j++){
-                v[0][i] = 0;
+                v[0][j] = 0;
                 v[i][2] = 0;
             }
         }
