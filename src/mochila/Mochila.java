@@ -46,6 +46,7 @@ public class Mochila {
                     v[i][j]=moc.max(v[i-1][j],v[i-1][j-peso[i]]+valor[i]);
                 }else{
                     v[i][j]=v[i-1][j];
+                    
                 }
             }
         }
