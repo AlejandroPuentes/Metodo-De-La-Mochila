@@ -11,7 +11,7 @@ public class Mochila {
         System.out.println("Peso de la mochila");
         int w = cs.nextInt();
         
-        int[][] v = new int[n+1][w+3]; //Matriz que almacenará los productos
+        int[][] v = new int[n+1][w+3]; //Matriz que almacenará los datos
         
         //Llena de 0 la matriz de productos
         
@@ -34,19 +34,19 @@ public class Mochila {
         //Calcula los valores
         
         for(int i = 1; i<n+1; i++){
-            for(int j = 1; j<w+1; j++){
+            for(int j = 3; j<w+3; j++){
                 int wi = v[i][0];
                 int bi = v[i][1];
-                if(wi<=w){
-                    if((bi + v[i-1][w-wi]) > v[i-1][w]){
-                        v[i][w] = bi +v[i-1][w-wi];
+                if(wi<=j){
+                    if((bi + v[i-1][j-wi]) > v[i-1][j]){
+                        v[i][j] = bi +v[i-1][j-wi];
                     }
                     else{
-                        v[i][w] = v[i-1][w];
+                        v[i][j] = v[i-1][j];
                     }
                 }
                 else{
-                    v[i][w] = v[i-1][w];
+                    v[i][j] = v[i-1][j];
                 }
             }
         }
@@ -54,10 +54,10 @@ public class Mochila {
         //Imprime la matriz de datos
         
         for(int i = 0; i<n+1; i++){
-            for(int j = 0; j<w+1; j++){
+            for(int j = 0; j<w+3; j++){
                 System.out.print(v[i][j]);
             }
-            System.out.println(" ");
+            System.out.println("  ");
         }
         
     }
